@@ -1,7 +1,5 @@
-import { Download, ExternalLink, Mail, Phone } from "lucide-react";
-import { SiLinkedin, SiGithub } from "react-icons/si";
-import { SiAmazonaws, SiDocker } from "react-icons/si";
-import { Server } from "lucide-react";
+import { Download, ExternalLink, Mail, Phone, Server, Cloud } from "lucide-react";
+import { SiLinkedin, SiGithub, SiAmazonwebservices, SiDocker } from "react-icons/si";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 
@@ -96,7 +94,7 @@ export default function HeroSection() {
       
       {/* Floating Elements */}
       <div className="absolute top-20 left-10 text-primary/20 animate-float">
-        <SiAmazonaws className="text-4xl" />
+        <SiAmazonwebservices className="text-4xl" />
       </div>
       <div className="absolute top-40 right-10 text-accent/20 animate-float" style={{ animationDelay: "1s" }}>
         <SiDocker className="text-4xl" />
