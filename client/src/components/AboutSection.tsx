@@ -3,7 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 
 export default function AboutSection() {
   const achievements = [
-    { value: "3+", label: "Years Experience" },
+    { value: "4+", label: "Years Experience" },
     { value: "99.99%", label: "Uptime Achieved" },
   ];
 
