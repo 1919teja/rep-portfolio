@@ -3,6 +3,13 @@ import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { insertContactSchema } from "@shared/schema";
 import { z } from "zod";
+import path from "path";
+import express from "express";
+import { fileURLToPath } from "url";
+
+// ES Module replacement for __dirname
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // Contact form submission
@@ -25,15 +32,14 @@ export async function registerRoutes(app: Express): Promise<Server> {
       }
     }
   });
+  app.use('/attached_assets', express.static('attached_assets'));
 
   // Resume download endpoint
   app.get("/api/resume", (req, res) => {
-    // In a real implementation, this would serve the actual resume file
-    res.json({ 
-      downloadUrl: "/assets/Saiteja_Kottapally_Resume.pdf",
-      filename: "Saiteja_Kottapally_Resume.pdf"
-    });
+    const filePath = path.join(__dirname, "../attached_assets/Saiteja_Kottapally_Resume.pdf");
+    res.download(filePath, "Saiteja_Kottapally_Resume.pdf");
   });
+  
 
   const httpServer = createServer(app);
   return httpServer;

@@ -26,7 +26,7 @@ export default function AboutSection() {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
             <p className="text-lg text-slate-300 leading-relaxed">
-              I'm a passionate Site Reliability Engineer with over 3 years of experience building and maintaining 
+              I'm a passionate Site Reliability Engineer with over 4+ years of experience building and maintaining 
               highly available, scalable cloud infrastructure. My expertise spans across cloud platforms, 
               containerization, automation, and observability.
             </p>

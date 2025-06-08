@@ -1,13 +1,27 @@
 import { Download, ExternalLink, Mail, Phone, Server, Cloud } from "lucide-react";
-import { SiLinkedin, SiGithub, SiAmazonwebservices, SiDocker } from "react-icons/si";
+import {
+  SiAmazonwebservices,
+  SiDocker,
+  SiKubernetes,
+  SiJenkins,
+  SiTerraform,
+  SiPrometheus,
+  SiGrafana,
+  SiGithub,
+  SiGitlab,
+  SiLinkedin
+} from "react-icons/si";
+//import { SiAzuredevops } from "react-icons/si";
+
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 
+
 export default function HeroSection() {
   const handleResumeDownload = () => {
-    // In a real implementation, this would fetch from the API
-    window.open("/api/resume", "_blank");
+    window.location.href = "/api/resume";
   };
+  
 
   const handleContactClick = () => {
     const element = document.querySelector("#contact");
@@ -22,14 +36,20 @@ export default function HeroSection() {
       
       <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="animate-fade-in">
-          {/* Professional Avatar */}
-          <div className="w-32 h-32 mx-auto mb-8">
-            <Avatar className="w-full h-full border-4 border-primary/20">
-              <AvatarFallback className="bg-gradient-to-r from-primary to-accent text-2xl font-bold text-white">
-                SK
-              </AvatarFallback>
-            </Avatar>
-          </div>
+
+{/* Professional Avatar */}
+<div className="w-32 h-32 mx-auto mb-6">
+<Avatar className="w-32 h-32 mx-auto mb-8 border-4 border-primary/20 overflow-hidden rounded-full">
+  <img
+    src="/attached_assets/profile-pic.jpg"
+    alt="Saiteja Kottapally"
+    className="w-full h-full object-cover object-center scale-110 transition-transform duration-300"
+    loading="lazy"
+  />
+</Avatar>
+
+</div>
+
           
           <h1 className="text-5xl md:text-6xl font-bold mb-6 text-gradient">
             Saiteja Kottapally
@@ -92,16 +112,38 @@ export default function HeroSection() {
         </div>
       </div>
       
-      {/* Floating Elements */}
-      <div className="absolute top-20 left-10 text-primary/20 animate-float">
-        <SiAmazonwebservices className="text-4xl" />
-      </div>
-      <div className="absolute top-40 right-10 text-accent/20 animate-float" style={{ animationDelay: "1s" }}>
-        <SiDocker className="text-4xl" />
-      </div>
-      <div className="absolute bottom-20 left-20 text-primary/20 animate-float" style={{ animationDelay: "2s" }}>
-        <Server className="text-3xl" />
-      </div>
+      {/* Floating DevOps Tools */}
+<div className="absolute top-20 left-10 text-primary/20 animate-float">
+  <SiAmazonwebservices className="text-4xl" title="AWS" />
+</div>
+<div className="absolute top-40 right-10 text-accent/20 animate-float" style={{ animationDelay: "1s" }}>
+  <SiDocker className="text-4xl" title="Docker" />
+</div>
+<div className="absolute bottom-20 left-20 text-primary/20 animate-float" style={{ animationDelay: "2s" }}>
+  <SiKubernetes className="text-4xl" title="Kubernetes" />
+</div>
+<div className="absolute bottom-10 right-20 text-accent/20 animate-float" style={{ animationDelay: "2.5s" }}>
+  <SiJenkins className="text-4xl" title="Jenkins" />
+</div>
+<div className="absolute top-10 right-40 text-primary/20 animate-float" style={{ animationDelay: "3s" }}>
+  <SiTerraform className="text-4xl" title="Terraform" />
+</div>
+{/* <div className="absolute top-1/2 left-10 text-accent/20 animate-float" style={{ animationDelay: "3.5s" }}>
+  <SiAzuredevops className="text-4xl" title="Azure DevOps" />
+</div> */}
+<div className="absolute bottom-32 right-10 text-primary/20 animate-float" style={{ animationDelay: "4s" }}>
+  <SiPrometheus className="text-4xl" title="Prometheus" />
+</div>
+<div className="absolute top-1/2 right-28 text-accent/20 animate-float" style={{ animationDelay: "4.5s" }}>
+  <SiGrafana className="text-4xl" title="Grafana" />
+</div>
+<div className="absolute top-28 left-1/2 text-primary/20 animate-float" style={{ animationDelay: "5s" }}>
+  <SiGithub className="text-4xl" title="GitHub" />
+</div>
+<div className="absolute bottom-10 left-1/3 text-accent/20 animate-float" style={{ animationDelay: "5.5s" }}>
+  <SiGitlab className="text-4xl" title="GitLab" />
+</div>
+
     </section>
   );
 }

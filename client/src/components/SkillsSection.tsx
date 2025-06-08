@@ -16,7 +16,7 @@ export default function SkillsSection() {
       title: "DevOps & Automation",
       color: "text-accent",
       bgColor: "bg-accent/20",
-      skills: ["Docker", "Kubernetes", "Terraform", "Ansible", "ArgoCD", "Helm"]
+      skills: ["Docker", "Kubernetes", "Terraform", "Ansible",  "FluxCD", "Helm","git", "github" ]
     },
     {
       icon: Zap,
